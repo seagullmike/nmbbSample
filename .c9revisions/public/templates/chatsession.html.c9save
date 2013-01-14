@@ -1,0 +1,1 @@
+{"ts":1357705468425,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<div class=\"name\"><div class=\"online_indicator\" /><%= model.name.full %></div>\n\n<ul class=\"chat_log\">\n</ul>\n\n<form>\n  <input type=\"text\" name=\"chat\" />\n  <input type=\"submit\" value=\"Chat\">\n</form>"]],"start1":0,"start2":0,"length1":0,"length2":196}]],"length":196}

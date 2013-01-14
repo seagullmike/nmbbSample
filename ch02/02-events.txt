@@ -1,6 +1,0 @@
-Starting application
-Handling Application Start Event
-Running applicatin
-Handling Application Run Event
-Stopping application
-Handling Application Stop Event

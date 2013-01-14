@@ -1,0 +1,2 @@
+{"ts":1357698859693,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"extends layout\n\nblock content\n  div#content\n\nblock scripts\n  script(data-main='js/boot', type='text/javascript',src='/js/libs/require.js')\n"]],"start1":0,"start2":0,"length1":0,"length2":139}]],"length":139}
+{"contributors":[],"silentsave":false,"ts":1357698865843,"patch":[[{"diffs":[[0,"'js/"],[-1,"boot"],[1,"main"],[0,"', t"]],"start1":78,"start2":78,"length1":12,"length2":12}]],"length":139,"saved":false}
