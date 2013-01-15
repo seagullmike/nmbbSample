@@ -25,3 +25,4 @@
     </dt>
     <dd>Bower Install (see .bowerrc and component.json)</dd>
 </dl>
+<p>Just Clone and Go</p>
