@@ -33,11 +33,12 @@ and Socket.io real-time client/server api.
         <p>bower will refresh/update components to the public/components folder</p>
     </dd>
 </dl>
-<p>Just Clone and Go
+<p>Just Clone and Go</p>
+
 
 ***Good luck on your open source journey!***
 
-Big shout-out to [Cloud9 IDE](https://c9.io) and Google Chrome Extension [Cloud 9 Button for Github](https://chrome.google.com/webstore/detail/gkddhhofgajgmgfebhaiihlahjmjkmph) one click to clone/edit any github repo.  Fantastic!
+SERIOUSLY!  You should try [Cloud9 IDE](https://c9.io) and Google Chrome Extension [Cloud 9 Button for Github](https://chrome.google.com/webstore/detail/gkddhhofgajgmgfebhaiihlahjmjkmph) one click to clone/edit any github repo.  Fantastic!
 
-</p>
+
 
