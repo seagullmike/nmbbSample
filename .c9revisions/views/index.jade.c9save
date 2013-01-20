@@ -2,3 +2,4 @@
 {"contributors":[],"silentsave":false,"ts":1357698865843,"patch":[[{"diffs":[[0,"'js/"],[-1,"boot"],[1,"main"],[0,"', t"]],"start1":78,"start2":78,"length1":12,"length2":12}]],"length":139,"saved":false}
 {"contributors":[],"silentsave":false,"ts":1358196710148,"patch":[[{"diffs":[[0,"c='/"],[-1,"js/lib"],[1,"components/requirej"],[0,"s/re"]],"start1":114,"start2":114,"length1":14,"length2":27}]],"length":152,"saved":false}
 {"ts":1358196839709,"patch":[[{"diffs":[[0,"t',src='"],[-1,"/"],[0,"componen"]],"start1":109,"start2":109,"length1":17,"length2":16}]],"length":151,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1358695843137,"patch":[[{"diffs":[[0,"#content"],[1,".content"],[0,"\n\nblock "]],"start1":35,"start2":35,"length1":16,"length2":24}]],"length":159,"saved":false}

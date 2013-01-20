@@ -1,28 +1,16 @@
 <h1>Login</h1>
 
-<form>
-<fieldset>
-  <legend>Credentials</legend>
 
-  <p class="error" id="error"></p>
-
-  <label>
-    Email:
-    <input type="text" name="email">
-  </label>
-
-  <br />
-
-  <label>
-    Password:
-    <input type="password" name="password">
-  </label>
-
-  <br />
-
-  <input type="submit" value="Login Now">
-</fieldset>
+<form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="input-block-level" name="email" placeholder="Email address">
+        <input type="password" class="input-block-level" name=password placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
 </form>
+
 
 <ul>
   <li><a href="#forgotpassword">Forgot Password?</a></li>
