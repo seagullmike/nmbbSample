@@ -1,15 +1,32 @@
-<h1><%= model.name.first %> <%= model.name.last %></h1>
+<li class="media">
+    <a class="pull-left" href="#profile/<%=model.accountId%>">
+      <img class="media-object" data-src="http://fakeimg.pl/64x64/">
+    </a>
+    <div class="media-body">
+        <h5 class="media-heading">Contact:</h5>
+     <p><%= model.name.first %> <%= model.name.last %></p>
+            
+            <div class='nav nav-bar'>
+                <% if ( !addButton ) { %>
+                    <a href="#profile/<%=model.accountId%>" class="btn btn-small">View</a>
+                <% }%>
+            
+                <!-- <div class="actionarea"> -->
+                  <% if ( addButton ) { %>
+                    <button class="addbutton btn btn-small">Add Contact</button>
+                  <% } %>
+                
+                  <% if ( removeButton ) { %>
+                    <button class="removebutton btn btn-small btn-warning">Remove Contact</button>
+                  <% } %>
+    
+                <!-- </div> -->
+            </div>
+        <div class="media">
+            
+        </div>
+    </div>
+</li>
 
-<% if ( !addButton ) { %>
-  <p><a href="#profile/<%=model.accountId%>">View</p>
-<% }%>
 
-<div class="actionarea">
-  <% if ( addButton ) { %>
-    <p><button class="addbutton">Add Contact</p>
-  <% } %>
-
-  <% if ( removeButton ) { %>
-    <p><button class="removebutton">Remove Contact</p>
-  <% } %>
 </div>

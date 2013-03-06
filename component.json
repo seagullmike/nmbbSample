@@ -3,11 +3,11 @@
   "description": "Node Mongo Backbone Sample",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~1.9.0",
-    "backbone": "~0.9.9",
-    "underscore": "~1.4.3",
+    "backbone": "~0.9.10",
+    "underscore": "~1.4.4",
     "text": "git://github.com/requirejs/text.git#~2.0.3",
     "requirejs": "~2.1.2",
-    "bootstrap": "~2.2.2"
-  }
+    "bootstrap": "~2.3.1",
+    "jquery": ">=1.9.1",
+    }
 }

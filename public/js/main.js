@@ -6,16 +6,19 @@ require.config({
         Sockets: '/socket.io/socket.io',
         models: 'models',
         text: '/components/text/text',
-        templates: '../templates' //, 
-        //SocialNetView: '/js/SocialNetView'
+        bootstrap: '/components/bootstrap/docs/assets/js/bootstrap.min',
+        templates: '../templates'
+        //jqmigrate: '/components/jquery/jquery-migrate'
     },
 
     shim: {
+        'jqmigrate':['jQuery'],
         'Backbone': ['Underscore', 'jQuery'],
-        'SocialNet': ['Backbone']
+        'SocialNet': ['Backbone'],
+        'bootstrap' : ['jQuery']
     }
 });
 
-require(['SocialNet'], function(SocialNet) {
+require(['SocialNet', 'bootstrap' /*,'jqmigrate'*/], function(SocialNet) {    
     SocialNet.initialize();
 });

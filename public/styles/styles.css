@@ -1,6 +1,11 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
 form {
   width: 400px;
-}
+} 
 
 #chat form {
   width: auto;
@@ -53,3 +58,4 @@ form {
 .online_indicator.online {
   background-position: -15px 0;
 }
+

@@ -1,8 +1,7 @@
   body {
-      padding-top: 40px;
-      padding-bottom: 40px;
       background-color: #f5f5f5;
   }
+  
   .form-signin {
       max-width: 300px;
       padding: 19px 29px 29px;
@@ -25,3 +24,5 @@
       margin-bottom: 15px;
       padding: 7px 9px;
   }
+ /*  #content  {background:url(?holder.js/200x200/social) no-repeat} */
+ 

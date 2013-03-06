@@ -1,0 +1,1 @@
+{"ts":1362571918852,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"{\n  \"name\": \"backbone\",\n  \"version\": \"0.9.10\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/documentcloud/backbone.git\"\n  }\n}"]],"start1":0,"start2":0,"length1":0,"length2":146}]],"length":146}

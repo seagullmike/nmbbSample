@@ -1,16 +1,32 @@
 !!! 5
 html(lang="en")
-  head
-    title Social Network
-    link(rel='stylesheet',href='/styles/styles.css')
-    link(rel='stylesheet',href='/components/bootstrap/docs/assets/css/bootstrap.css')
-    link(rel='stylesheet',href='/styles/styles.1.css')
-    link(rel='stylesheet',href='/components/bootstrap/docs/assets/css/bootstrap-responsive.css')
+head
+title Social.Net
+link(rel='stylesheet',href='/components/bootstrap/docs/assets/css/bootstrap.css')
+link(rel='stylesheet',href='/styles/styles.css')
+link(rel='stylesheet',href='/styles/styles.1.css')
+link(rel='stylesheet',href='/components/bootstrap/docs/assets/css/bootstrap-responsive.css')
 
+body
+.navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+        .container-fluid
+            a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.brand(href="#index") Social.net
+            .nav-collapse.collapse
+                p.navbar-text.pull-right Logged in as 
+                    a(href="#login") GUEST
+                ul.nav
+                    li.active
+                        a(href="#index") Home
+                    li
+                        a(href="#contacts/me") Contacts
+                    li
+                        a(href="#profile/me") Profile
 
-  body
-    block content
-    
-    div#chat
-    
-    block scripts
+block content
+
+block scripts
