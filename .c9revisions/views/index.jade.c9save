@@ -21,3 +21,5 @@
 {"contributors":[],"silentsave":false,"ts":1360117620223,"patch":[[{"diffs":[[0,"ontainer"],[1,"-fluid"],[0,".well\n  "]],"start1":39,"start2":39,"length1":16,"length2":22}]],"length":225,"saved":false}
 {"ts":1360117742426,"patch":[[{"diffs":[[0,"div."],[-1,"container-fluid."],[0,"well"]],"start1":34,"start2":34,"length1":24,"length2":8}]],"length":209,"saved":false}
 {"ts":1360117762544,"patch":[[{"diffs":[[0,"ell\n"],[-1,"      .row\n  "],[0,"    "]],"start1":39,"start2":39,"length1":21,"length2":8},{"diffs":[[0,"t.span8\n"],[-1,"  "],[0,"      #c"]],"start1":56,"start2":56,"length1":18,"length2":16}]],"length":194,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1362684701158,"patch":[[{"diffs":[[0,"div."],[-1,"well\n"],[1,"row.well.clearfix\n  "],[0,"    "]],"start1":34,"start2":34,"length1":13,"length2":28},{"diffs":[[0,"t.span8\n"],[1,"  "],[0,"      #c"]],"start1":71,"start2":71,"length1":16,"length2":18}]],"length":211,"saved":false}
+{"ts":1362684842961,"patch":[[{"diffs":[[0,"div."],[-1,"row."],[0,"well"]],"start1":34,"start2":34,"length1":12,"length2":8}]],"length":207,"saved":false}
