@@ -1,2 +1,5 @@
 node_modules/
+
+# clould 9 ide folders and files
+.c9revisions/
 *.c9save
