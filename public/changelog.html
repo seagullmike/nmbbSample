@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DZ New York - Intranet ChangeLog</title>
+<meta name=viewport content='width=device-width, initial-scale=1.0'>
+<link rel='shortcut icon' href='/dzfavicon.png' /> 
+<meta name=description content='DZ Bank NY intraNet Changlog'>
+<meta name=author content='T. Killilea'>
+<link href='/components/bootstrap/docs/assets/css/bootstrap.css' rel=stylesheet type='text/css' media=screen >
+<style>
+body {
+padding-top: 60px;
+padding-bottom: 40px;
+} 
+</style>
+</head>
+<body>
+<div class='navbar navbar-inverse navbar-fixed-top'>
+<div class=navbar-inner>
+<div class=container-fluid>
+<a class='btn btn-navbar' data-toggle=collapse data-target='.nav-collapse'><span
+class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span>
+</a><a class=brand href='/'>DZ Bank-New York</a>
+<div class='btn-group pull-right'>
+<a class='btn dropdown-toggle' data-toggle='dropdown' href='#'><i class=icon-user>
+</i> User <span class=caret></span></a>
+<ul class=dropdown-menu>
+<li><a id=username href=# >My Profile</a></li>
+<li class=divider></li>
+<li><a href='/logout.aspx'>Sign Out</a></li>
+</ul>
+</div>
+<div class=nav-collapse>
+<ul class=nav>
+<li><a href=/ >Home</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=container>
+<div class=hero-unit><h2>DZ New York <small>Intranet website software change log history</small></h2><p>GIT - <abbr title='Distributed Version Control System'>DVCS: </abbr> Commit-log/Version control reporting.</p></div>
+ <div class='row'>
+ <div class='span12'>
+ <h4><span class=text-info>Revision-Subject: cleanup</span></h4>
+ <div class=row>
+ <div class=span6><strong>Author: Ted Killilea</strong></div><div class=span6><strong>Email: lrrs259@gmail.com</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Date: Sat Mar 9 11:03:00 2013 -0500</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Description: </strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>STATISTICS</p></div>
+ </div>
+ <div class=row>
+<div class=span12>
+<strong>List of modified files:</strong>
+<ul class=unstyled>
+ <li>.gitignore<div>diff --git a/.gitignore b/.gitignore
+index 40b878d..f72aaca 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,2 @@
+-node_modules/
+\ No newline at end of file
++node_modules/
++*.c9save
+\ No newline at end of file</div></li>
+ </ul><br/></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>committ stats</p></div>
+ </div>
+ </div>
+ </div>
+ <div class='row'>
+ <div class='span12'>
+ <h4><span class=text-info>Revision-Subject: tweak bootstrap templates</span></h4>
+ <div class=row>
+ <div class=span6><strong>Author: Ted Killilea</strong></div><div class=span6><strong>Email: lrrs259@gmail.com</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Date: Thu Mar 7 16:26:19 2013 -0500</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Description: </strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>STATISTICS</p></div>
+ </div>
+ <div class=row>
+<div class=span12>
+<strong>List of modified files:</strong>
+<ul class=unstyled>
+ <li>.c9revisions/config/mail.js.c9save<div></div></li>
+ <li>.c9revisions/public/templates/addcontact.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/contact.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/contacts.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/index.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/profile.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/register.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/status.html.c9save<div></div></li>
+ <li>.c9revisions/views/index.jade.c9save<div></div></li>
+ <li>public/templates/addcontact.html<div></div></li>
+ <li>public/templates/contact.html<div></div></li>
+ <li>public/templates/contacts.html<div></div></li>
+ <li>public/templates/index.html<div></div></li>
+ <li>public/templates/profile.html<div></div></li>
+ <li>public/templates/status.html<div></div></li>
+ </ul><br/></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>committ stats</p></div>
+ </div>
+ </div>
+ </div>
+ <div class='row'>
+ <div class='span12'>
+ <h4><span class=text-info>Revision-Subject: integrate bootstrap 2.3.1</span></h4>
+ <div class=row>
+ <div class=span6><strong>Author: Ted Killilea</strong></div><div class=span6><strong>Email: lrrs259@gmail.com</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Date: Wed Mar 6 07:51:46 2013 -0500</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Description: </strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>STATISTICS</p></div>
+ </div>
+ <div class=row>
+<div class=span12>
+<strong>List of modified files:</strong>
+<ul class=unstyled>
+ <li>.c9revisions/component.json.c9save<div></div></li>
+ <li>.c9revisions/public/components/backbone/component.json.c9save<div></div></li>
+ <li>.c9revisions/public/components/bootstrap/component.json.c9save<div></div></li>
+ <li>.c9revisions/public/components/bootstrap/docs/assets/css/bootstrap.css.c9save<div></div></li>
+ <li>.c9revisions/public/components/bootstrap/docs/components.html.c9save<div></div></li>
+ <li>.c9revisions/public/components/jquery/component.json.c9save<div></div></li>
+ <li>.c9revisions/public/components/requirejs/component.json.c9save<div></div></li>
+ <li>.c9revisions/public/holder.js.c9save<div></div></li>
+ <li>.c9revisions/public/js/libs/backbone.js.c9save<div></div></li>
+ <li>.c9revisions/public/js/libs/jquery.js.c9save<div></div></li>
+ <li>.c9revisions/public/js/main.js.c9save<div></div></li>
+ <li>.c9revisions/public/styles/bootstrap.css.c9save<div></div></li>
+ <li>.c9revisions/public/styles/styles.1.css.c9save<div></div></li>
+ <li>.c9revisions/public/styles/styles.css.c9save<div></div></li>
+ <li>.c9revisions/public/templates/contact.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/contacts.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/index.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/login.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/profile.html.c9save<div></div></li>
+ <li>.c9revisions/public/templates/status.html.c9save<div></div></li>
+ <li>.c9revisions/snippets/account_contact.js.c9save<div></div></li>
+ <li>.c9revisions/views/index.jade.c9save<div></div></li>
+ <li>.c9revisions/views/layout.jade.c9save<div></div></li>
+ <li>component.json<div></div></li>
+ <li>public/components/bootstrap/CHANGELOG.md<div></div></li>
+ <li>public/components/bootstrap/Makefile<div></div></li>
+ <li>public/components/bootstrap/README.md<div></div></li>
+ <li>public/components/bootstrap/component.json<div></div></li>
+ <li>public/components/bootstrap/composer.json<div></div></li>
+ <li>public/components/bootstrap/docs/assets/css/bootstrap-responsive.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/css/bootstrap.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/css/docs.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bootstrap-docs-readme.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-carousel.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-fluid.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-fluid.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-hero.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-justified-nav.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-marketing-narrow.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-marketing.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-signin.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-starter.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-starter.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-sticky-footer.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/application.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-affix.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-alert.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-button.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-carousel.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-collapse.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-dropdown.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-modal.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-popover.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-scrollspy.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-tab.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-tooltip.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-transition.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-typeahead.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap.min.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/holder/holder.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/html5shiv.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/jquery.js<div></div></li>
+ <li>public/components/bootstrap/docs/base-css.html<div></div></li>
+ <li>public/components/bootstrap/docs/components.html<div></div></li>
+ <li>public/components/bootstrap/docs/customize.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/carousel.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/fluid.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/hero.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/justified-nav.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/marketing-alternate.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/marketing-narrow.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/signin.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/starter-template.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/sticky-footer-navbar.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/sticky-footer.html<div></div></li>
+ <li>public/components/bootstrap/docs/extend.html<div></div></li>
+ <li>public/components/bootstrap/docs/getting-started.html<div></div></li>
+ <li>public/components/bootstrap/docs/index.html<div></div></li>
+ <li>public/components/bootstrap/docs/javascript.html<div></div></li>
+ <li>public/components/bootstrap/docs/scaffolding.html<div></div></li>
+ <li>public/components/bootstrap/docs/templates/layout.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/base-css.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/components.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/extend.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/getting-started.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/index.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/javascript.mustache<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-affix.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-alert.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-button.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-carousel.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-collapse.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-dropdown.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-modal.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-popover.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-scrollspy.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-tab.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-tooltip.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-transition.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-typeahead.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-carousel.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-modal.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-tooltip.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-typeahead.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/vendor/jquery.js<div></div></li>
+ <li>public/components/bootstrap/less/bootstrap.less<div></div></li>
+ <li>public/components/bootstrap/less/button-groups.less<div></div></li>
+ <li>public/components/bootstrap/less/buttons.less<div></div></li>
+ <li>public/components/bootstrap/less/carousel.less<div></div></li>
+ <li>public/components/bootstrap/less/close.less<div></div></li>
+ <li>public/components/bootstrap/less/dropdowns.less<div></div></li>
+ <li>public/components/bootstrap/less/forms.less<div></div></li>
+ <li>public/components/bootstrap/less/labels-badges.less<div></div></li>
+ <li>public/components/bootstrap/less/media.less<div></div></li>
+ <li>public/components/bootstrap/less/mixins.less<div></div></li>
+ <li>public/components/bootstrap/less/navbar.less<div></div></li>
+ <li>public/components/bootstrap/less/navs.less<div></div></li>
+ <li>public/components/bootstrap/less/pager.less<div></div></li>
+ <li>public/components/bootstrap/less/pagination.less<div></div></li>
+ <li>public/components/bootstrap/less/popovers.less<div></div></li>
+ <li>public/components/bootstrap/less/reset.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-767px-max.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-navbar.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-utilities.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive.less<div></div></li>
+ <li>public/components/bootstrap/less/scaffolding.less<div></div></li>
+ <li>public/components/bootstrap/less/sprites.less<div></div></li>
+ <li>public/components/bootstrap/less/tables.less<div></div></li>
+ <li>public/components/bootstrap/less/tests/css-tests.css<div></div></li>
+ <li>public/components/bootstrap/less/tests/css-tests.html<div></div></li>
+ <li>public/components/bootstrap/less/thumbnails.less<div></div></li>
+ <li>public/components/bootstrap/less/tooltip.less<div></div></li>
+ <li>public/components/bootstrap/less/type.less<div></div></li>
+ <li>public/components/bootstrap/less/variables.less<div></div></li>
+ <li>public/components/bootstrap/package.json<div></div></li>
+ <li>public/components/jquery/component.json<div></div></li>
+ <li>public/components/jquery/composer.json<div></div></li>
+ <li>public/components/jquery/jquery-migrate.js<div></div></li>
+ <li>public/components/jquery/jquery-migrate.min.js<div></div></li>
+ <li>public/components/jquery/jquery.js<div></div></li>
+ <li>public/components/jquery/jquery.min.js<div></div></li>
+ <li>public/components/underscore/.gitignore<div></div></li>
+ <li>public/components/underscore/.npmignore<div></div></li>
+ <li>public/components/underscore/.travis.yml<div></div></li>
+ <li>public/components/underscore/CONTRIBUTING.md<div></div></li>
+ <li>public/components/underscore/LICENSE<div></div></li>
+ <li>public/components/underscore/Rakefile<div></div></li>
+ <li>public/components/underscore/component.json<div></div></li>
+ <li>public/components/underscore/docs/images/underscore.png<div></div></li>
+ <li>public/components/underscore/docs/underscore.html<div></div></li>
+ <li>public/components/underscore/index.html<div></div></li>
+ <li>public/components/underscore/package.json<div></div></li>
+ <li>public/components/underscore/test/arrays.js<div></div></li>
+ <li>public/components/underscore/test/collections.js<div></div></li>
+ <li>public/components/underscore/test/functions.js<div></div></li>
+ <li>public/components/underscore/test/index.html<div></div></li>
+ <li>public/components/underscore/test/objects.js<div></div></li>
+ <li>public/components/underscore/test/utility.js<div></div></li>
+ <li>public/components/underscore/test/vendor/runner.js<div></div></li>
+ <li>public/components/underscore/underscore-min.js<div></div></li>
+ <li>public/components/underscore/underscore.js<div></div></li>
+ <li>public/holder.js<div></div></li>
+ <li>public/js/libs/backbone.js<div></div></li>
+ <li>public/js/libs/jquery.js<div></div></li>
+ <li>public/js/libs/require.js<div></div></li>
+ <li>public/js/libs/text.js<div></div></li>
+ <li>public/js/libs/underscore.js<div></div></li>
+ <li>public/js/main.js<div></div></li>
+ <li>public/styles/bootstrap.css<div></div></li>
+ <li>public/styles/styles.1.css<div></div></li>
+ <li>public/styles/styles.css<div></div></li>
+ <li>public/templates/addcontact.html<div></div></li>
+ <li>public/templates/contact.html<div></div></li>
+ <li>public/templates/contacts.html<div></div></li>
+ <li>public/templates/index.html<div></div></li>
+ <li>public/templates/login.html<div></div></li>
+ <li>public/templates/profile.html<div></div></li>
+ <li>public/templates/status.html<div></div></li>
+ <li>views/index.jade<div></div></li>
+ <li>views/layout.jade<div></div></li>
+ <li>views/resetPassword.jade<div></div></li>
+ <li>views/resetPasswordSuccess.jade<div></div></li>
+ </ul><br/></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>committ stats</p></div>
+ </div>
+ </div>
+ </div>
+ <div class='row'>
+ <div class='span12'>
+ <h4><span class=text-info>Revision-Subject: style with bootstrap</span></h4>
+ <div class=row>
+ <div class=span6><strong>Author: Ted Killilea</strong></div><div class=span6><strong>Email: lrrs259@gmail.com</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Date: Sun Jan 20 10:51:03 2013 -0500</strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><strong>Description: </strong></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>STATISTICS</p></div>
+ </div>
+ <div class=row>
+<div class=span12>
+<strong>List of modified files:</strong>
+<ul class=unstyled>
+ <li>.c9revisions/public/styles/styles.1.css.c9save<div></div></li>
+ <li>.c9revisions/public/styles/styles.css.c9save<div></div></li>
+ <li>.c9revisions/public/templates/login.html.c9save<div></div></li>
+ <li>.c9revisions/views/index.jade.c9save<div></div></li>
+ <li>.c9revisions/views/layout.jade.c9save<div></div></li>
+ <li>component.json<div></div></li>
+ <li>public/components/bootstrap/.gitignore<div></div></li>
+ <li>public/components/bootstrap/.travis.yml<div></div></li>
+ <li>public/components/bootstrap/CONTRIBUTING.md<div></div></li>
+ <li>public/components/bootstrap/LICENSE<div></div></li>
+ <li>public/components/bootstrap/Makefile<div></div></li>
+ <li>public/components/bootstrap/README.md<div></div></li>
+ <li>public/components/bootstrap/component.json<div></div></li>
+ <li>public/components/bootstrap/composer.json<div></div></li>
+ <li>public/components/bootstrap/docs/assets/css/bootstrap-responsive.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/css/bootstrap.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/css/docs.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/ico/apple-touch-icon-114-precomposed.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/ico/apple-touch-icon-144-precomposed.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/ico/favicon.ico<div></div></li>
+ <li>public/components/bootstrap/docs/assets/ico/favicon.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-01.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-02.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-03.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bs-docs-bootstrap-features.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bs-docs-masthead-pattern.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bs-docs-responsive-illustrations.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/bs-docs-twitter-github.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/8020select.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/adoptahydrant.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/breakingnews.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/fleetio.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/gathercontent.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/jshint.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/kippt.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/example-sites/soundready.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-carousel.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-fluid.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-hero.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-marketing-narrow.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-signin.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-starter.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/bootstrap-example-sticky-footer.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/browser-icon-chrome.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/browser-icon-firefox.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/browser-icon-safari.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/slide-01.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/slide-02.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/examples/slide-03.jpg<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/glyphicons-halflings-white.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/glyphicons-halflings.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/grid-baseline-20px.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/less-logo-large.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/img/responsive-illustrations.png<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/README.md<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/application.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-affix.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-alert.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-button.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-carousel.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-collapse.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-dropdown.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-modal.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-popover.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-scrollspy.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-tab.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-tooltip.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-transition.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap-typeahead.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/bootstrap.min.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/google-code-prettify/prettify.css<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/google-code-prettify/prettify.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/holder/holder.js<div></div></li>
+ <li>public/components/bootstrap/docs/assets/js/jquery.js<div></div></li>
+ <li>public/components/bootstrap/docs/base-css.html<div></div></li>
+ <li>public/components/bootstrap/docs/build/index.js<div></div></li>
+ <li>public/components/bootstrap/docs/build/package.json<div></div></li>
+ <li>public/components/bootstrap/docs/components.html<div></div></li>
+ <li>public/components/bootstrap/docs/customize.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/carousel.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/fluid.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/hero.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/marketing-alternate.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/marketing-narrow.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/signin.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/starter-template.html<div></div></li>
+ <li>public/components/bootstrap/docs/examples/sticky-footer.html<div></div></li>
+ <li>public/components/bootstrap/docs/extend.html<div></div></li>
+ <li>public/components/bootstrap/docs/getting-started.html<div></div></li>
+ <li>public/components/bootstrap/docs/index.html<div></div></li>
+ <li>public/components/bootstrap/docs/javascript.html<div></div></li>
+ <li>public/components/bootstrap/docs/scaffolding.html<div></div></li>
+ <li>public/components/bootstrap/docs/templates/layout.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/base-css.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/components.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/customize.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/extend.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/getting-started.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/index.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/javascript.mustache<div></div></li>
+ <li>public/components/bootstrap/docs/templates/pages/scaffolding.mustache<div></div></li>
+ <li>public/components/bootstrap/img/glyphicons-halflings-white.png<div></div></li>
+ <li>public/components/bootstrap/img/glyphicons-halflings.png<div></div></li>
+ <li>public/components/bootstrap/js/.jshintrc<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-affix.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-alert.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-button.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-carousel.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-collapse.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-dropdown.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-modal.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-popover.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-scrollspy.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-tab.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-tooltip.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-transition.js<div></div></li>
+ <li>public/components/bootstrap/js/bootstrap-typeahead.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/index.html<div></div></li>
+ <li>public/components/bootstrap/js/tests/phantom.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/server.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-affix.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-alert.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-button.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-carousel.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-collapse.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-dropdown.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-modal.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-phantom.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-popover.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-scrollspy.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-tab.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-tooltip.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-transition.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/unit/bootstrap-typeahead.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/vendor/jquery.js<div></div></li>
+ <li>public/components/bootstrap/js/tests/vendor/qunit.css<div></div></li>
+ <li>public/components/bootstrap/js/tests/vendor/qunit.js<div></div></li>
+ <li>public/components/bootstrap/less/accordion.less<div></div></li>
+ <li>public/components/bootstrap/less/alerts.less<div></div></li>
+ <li>public/components/bootstrap/less/bootstrap.less<div></div></li>
+ <li>public/components/bootstrap/less/breadcrumbs.less<div></div></li>
+ <li>public/components/bootstrap/less/button-groups.less<div></div></li>
+ <li>public/components/bootstrap/less/buttons.less<div></div></li>
+ <li>public/components/bootstrap/less/carousel.less<div></div></li>
+ <li>public/components/bootstrap/less/close.less<div></div></li>
+ <li>public/components/bootstrap/less/code.less<div></div></li>
+ <li>public/components/bootstrap/less/component-animations.less<div></div></li>
+ <li>public/components/bootstrap/less/dropdowns.less<div></div></li>
+ <li>public/components/bootstrap/less/forms.less<div></div></li>
+ <li>public/components/bootstrap/less/grid.less<div></div></li>
+ <li>public/components/bootstrap/less/hero-unit.less<div></div></li>
+ <li>public/components/bootstrap/less/labels-badges.less<div></div></li>
+ <li>public/components/bootstrap/less/layouts.less<div></div></li>
+ <li>public/components/bootstrap/less/media.less<div></div></li>
+ <li>public/components/bootstrap/less/mixins.less<div></div></li>
+ <li>public/components/bootstrap/less/modals.less<div></div></li>
+ <li>public/components/bootstrap/less/navbar.less<div></div></li>
+ <li>public/components/bootstrap/less/navs.less<div></div></li>
+ <li>public/components/bootstrap/less/pager.less<div></div></li>
+ <li>public/components/bootstrap/less/pagination.less<div></div></li>
+ <li>public/components/bootstrap/less/popovers.less<div></div></li>
+ <li>public/components/bootstrap/less/progress-bars.less<div></div></li>
+ <li>public/components/bootstrap/less/reset.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-1200px-min.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-767px-max.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-768px-979px.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-navbar.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive-utilities.less<div></div></li>
+ <li>public/components/bootstrap/less/responsive.less<div></div></li>
+ <li>public/components/bootstrap/less/scaffolding.less<div></div></li>
+ <li>public/components/bootstrap/less/sprites.less<div></div></li>
+ <li>public/components/bootstrap/less/tables.less<div></div></li>
+ <li>public/components/bootstrap/less/tests/buttons.html<div></div></li>
+ <li>public/components/bootstrap/less/tests/css-tests.css<div></div></li>
+ <li>public/components/bootstrap/less/tests/css-tests.html<div></div></li>
+ <li>public/components/bootstrap/less/tests/forms-responsive.html<div></div></li>
+ <li>public/components/bootstrap/less/tests/forms.html<div></div></li>
+ <li>public/components/bootstrap/less/tests/navbar-fixed-top.html<div></div></li>
+ <li>public/components/bootstrap/less/tests/navbar-static-top.html<div></div></li>
+ <li>public/components/bootstrap/less/tests/navbar.html<div></div></li>
+ <li>public/components/bootstrap/less/thumbnails.less<div></div></li>
+ <li>public/components/bootstrap/less/tooltip.less<div></div></li>
+ <li>public/components/bootstrap/less/type.less<div></div></li>
+ <li>public/components/bootstrap/less/utilities.less<div></div></li>
+ <li>public/components/bootstrap/less/variables.less<div></div></li>
+ <li>public/components/bootstrap/less/wells.less<div></div></li>
+ <li>public/components/bootstrap/package.json<div></div></li>
+ <li>public/styles/styles.1.css<div></div></li>
+ <li>public/templates/login.html<div></div></li>
+ <li>views/index.jade<div></div></li>
+ <li>views/layout.jade<div></div></li>
+ </ul><br/></div>
+ </div>
+ <div class=row>
+ <div class=span12><p>committ stats</p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<script src='http://code.jquery.com/jquery.js'></script>
+<script src='/components/bootstrap/docs/assets/js/bootstrap.min.js'></script>
+</body>
+</html>
