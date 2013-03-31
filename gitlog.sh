@@ -1,5 +1,5 @@
 #!/bin/sh
-revlist=$(git rev-list -4 HEAD)
+revlist=$(git rev-list -12 HEAD)
 (
 echo $"<!DOCTYPE html>
 <html>

@@ -9,7 +9,7 @@ function(SocialNetView, indexTemplate, StatusView, Status) {
         },
 
         initialize: function(options) {
-            options.socketEvents.bind('status:me', this.onSocketStatusAdded, this);
+            options.socketEvents.on('status:me', this.onSocketStatusAdded, this);
             this.collection.on('add', this.onStatusAdded, this);
             this.collection.on('reset', this.onStatusCollectionReset, this);
         },
@@ -34,7 +34,7 @@ function(SocialNetView, indexTemplate, StatusView, Status) {
                 this.collection.add(new Status({
                     status: newStatus.status,
                     name: newStatus.name
-                }))
+                }));
             }
         },
 
@@ -47,7 +47,7 @@ function(SocialNetView, indexTemplate, StatusView, Status) {
 
         updateStatus: function() {
             var statusText = $('input[name=status]').val();
-            var statusCollection = this.collection;
+            //var statusCollection = this.collection;
             $.post('/accounts/me/status', {
                 status: statusText
             }).done(function(data) {console.log(data)}); // New: no longer adding to screen

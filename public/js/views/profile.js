@@ -1,7 +1,6 @@
 define(['SocialNetView', 'text!templates/profile.html', 'text!templates/status.html', 'models/Status', 'views/status'],
 
-function(SocialNetView, profileTemplate,
-statusTemplate, Status, StatusView) {
+function(SocialNetView, profileTemplate, statusTemplate, Status, StatusView) {
     var profileView = SocialNetView.extend({
         el: $('#content'),
 
@@ -11,7 +10,7 @@ statusTemplate, Status, StatusView) {
 
         initialize: function(options) {
             this.socketEvents = options.socketEvents;
-            this.model.bind('change', this.render, this);
+            this.model.on('change', this.render, this);
         },
 
         postStatus: function() {
@@ -29,7 +28,7 @@ statusTemplate, Status, StatusView) {
             this.prependStatus(new Status({
                 status: newStatus.status,
                 name: newStatus.name
-            }))
+            }));
         },
 
         prependStatus: function(statusModel) {
@@ -41,8 +40,9 @@ statusTemplate, Status, StatusView) {
 
         render: function() {
             if (this.model.get('_id')) {
-                this.socketEvents.bind('status:' + this.model.get('_id'), this.onSocketStatusAdded, this);
+                this.socketEvents.on('status:' + this.model.get('_id'), this.onSocketStatusAdded, this);
             }
+
             var that = this;
             this.$el.html(
             _.template(profileTemplate, this.model.toJSON()));

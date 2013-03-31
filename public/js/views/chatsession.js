@@ -16,10 +16,10 @@ function(SocialNetView, chatItemTemplate) {
             this.socketEvents = options.socketEvents;
             var accountId = this.model.get('accountId');
             this.socketEvents.on('socket:chat:in:' + accountId, this.receiveChat, this);
-            this.socketEvents.bind('login:' + accountId,
+            this.socketEvents.on('login:' + accountId,
             this.handleContactLogin,
             this);
-            this.socketEvents.bind('logout:' + accountId,
+            this.socketEvents.on('logout:' + accountId,
             this.handleContactLogout,
             this);
         },

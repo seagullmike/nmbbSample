@@ -16,7 +16,7 @@ function(sio, ContactCollection, ChatView) {
 
             socket.on('connect', function() {
                 console.log('socket.io:connect--from client');
-                eventDispatcher.bind('socket:chat', sendChat);
+                eventDispatcher.on('socket:chat', sendChat);
                 socket.on('chatserver', function(data) {
                     eventDispatcher.trigger('socket:chat:start:' + data.from);
                     eventDispatcher.trigger('socket:chat:in:' + data.from, data);
@@ -30,7 +30,7 @@ function(sio, ContactCollection, ChatView) {
                     collection: myContacts,
                     socketEvents: eventDispatcher
                 }).render();
-                myContacts.fetch();
+                myContacts.fetch({reset:true});
             });
         };
 
@@ -50,7 +50,7 @@ function(sio, ContactCollection, ChatView) {
             }
         };
 
-        eventDispatcher.bind('app:loggedin', connectSocket);
+        eventDispatcher.on('app:loggedin', connectSocket);
     };
 
     return {

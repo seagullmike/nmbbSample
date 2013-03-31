@@ -33,7 +33,7 @@ ContactCollection) {
                 collection: statusCollection,
                 socketEvents: this.socketEvents
             }));
-            statusCollection.fetch();
+            statusCollection.fetch({reset:true});
         },
 
         addcontact: function() {
@@ -66,15 +66,15 @@ ContactCollection) {
         },
 
         contacts: function(id) {
-            console.log(id + ' contacts route');
+            //console.log(id + ' contacts route');
             var contactId = id ? id : 'me';
             var contactCollection = new ContactCollection();
             contactCollection.url = '/accounts/' + contactId + '/contacts';
-            console.log(contactCollection.url);
+            //console.log(contactCollection.url);
             this.changeView(new ContactsView({
                 collection: contactCollection
             }));
-            contactCollection.fetch();
+            contactCollection.fetch({reset:true});
         }
     });
 

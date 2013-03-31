@@ -9,17 +9,22 @@ define(['SocialNetView', 'text!templates/register.html'], function(SocialNetView
         },
 
         register: function() {
-            $.post('/register', {
+           var post= $.post('/register', {
                 firstName: $('input[name=firstName]').val(),
                 lastName: $('input[name=lastName]').val(),
                 email: $('input[name=email]').val(),
                 password: $('input[name=password]').val(),
-            }).done(function(data) {
+            });
+            
+            post.done(function(data) {
                 console.log('register:success');
                 window.location.hash = 'login';
-            }).fail(function(data) {
+            });
+            
+            post.fail(function(data) {
                 console.log('register:failcode: '+data);
             });
+
             return false;
         },
 

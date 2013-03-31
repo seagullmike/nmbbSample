@@ -9,14 +9,15 @@ define(['SocialNetView', 'text!templates/forgotpassword.html'], function(SocialN
         },
 
         password: function() {
-            $.post('/forgotpassword', {
-                email: $('input[name=email]').val()
-            }, function(data) {
+            var post = $.post('/forgotpassword', {email: $('input[name=email]').val()});
+            
+            post.done(function(data) {
                 console.log(data);
             });
+            
             return false;
         },
-
+        
         render: function() {
             this.$el.html(forgotpasswordTemplate);
         }
