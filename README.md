@@ -3,7 +3,7 @@
 <p>This is the example source code from Chapter 10 accompanying O'Reilly's
     "Building Node Applications with MongoDB and Backbone" by Mike Wilson.</p>
 <p>fixed up a few typos and case errors. The Cloud9 IDE is strict with respect to
-module nams... minor edits to run in the Cloud9 IDE were required.  Although this 
+module names... minor edits to run in the Cloud9 IDE were required.  Although this 
 example SocialNet app has a simple UI on the client it is still full featured and 
 showcasese a full functioning NodeJS based server with MongoDB data store, REST api
 and Socket.io real-time client/server api.
@@ -33,8 +33,13 @@ and Socket.io real-time client/server api.
         <p>bower will refresh/update components to the public/components folder</p>
     </dd>
 </dl>
-<p>Just Clone and Go</p>
-
+<p>Just Clone and Go!  Feel free to use my 'free' cloud hosted mongoDB database for your inital testing purposes.  
+Checkout MongoHQ to create your own free account as you become more accustomed to using this stack.
+</p>
+<p>My recent project updates are mainly to refresh the development stack.  Updates to the server: Node.js, Express, socket.io etc.  
+Also, there has been updates to the source code to support Backbone v1.0 (collection.fetch({reset:true}) and usage of .listenTo in Backbone views</p>
+I also added Bootstrap to the project and applied limited styling changes to improve the User Interface...  much more could be done wrt the chat UI.  
+It shouldn't be fixed, perhaps some type of slider UI to better support the chatting.
 
 ***Good luck on your open source journey!***
 
