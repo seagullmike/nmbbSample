@@ -8,7 +8,7 @@ function(SocialNetView, ChatSessionView, ChatItemView, chatItemTemplate) {
 
         initialize: function(options) {
             this.socketEvents = options.socketEvents;
-            this.collection.on('reset', this.renderCollection, this);
+            this.listenTo(this.collection,'reset',this.renderCollection);
         },
 
         render: function() {
