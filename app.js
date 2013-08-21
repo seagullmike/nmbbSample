@@ -28,7 +28,7 @@ app.sessionStore = new MemoryStore();
 // Import the data layer
 var mongoose = require('mongoose');
 var config = {
-    mail: require('./config/mail')
+    mail: require('./config/mail.example')
 };
 
 // Import the models
