@@ -45,5 +45,6 @@ It shouldn't be fixed, perhaps some type of slider UI to better support the chat
 
 SERIOUSLY!  You should try [Cloud9 IDE](https://c9.io) and Google Chrome Extension [Cloud 9 Button for Github](https://chrome.google.com/webstore/detail/gkddhhofgajgmgfebhaiihlahjmjkmph) one click to clone/edit any github repo.  Fantastic!
 
+### Coffee-Script ###
 
 
