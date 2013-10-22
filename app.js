@@ -37,7 +37,7 @@ var models = {
 };
 
 app.configure(function() {
-    app.sessionSecret = 'SocialNet secret key';
+    app.sessionSecret = 'SocialNetYOLO';
     app.set('view engine', 'jade');
     app.use(express.static(__dirname + '/public'));
     app.use(express.limit('1mb'));

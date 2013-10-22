@@ -33,7 +33,7 @@ ContactCollection) {
                 collection: statusCollection,
                 socketEvents: this.socketEvents
             }));
-            statusCollection.fetch();
+            statusCollection.fetch({reset:true});
         },
 
         addcontact: function() {
@@ -62,7 +62,7 @@ ContactCollection) {
                 model: model,
                 socketEvents: this.socketEvents
             }));
-            model.fetch();
+            model.fetch({reset:true});
         },
 
         contacts: function(id) {
@@ -74,7 +74,7 @@ ContactCollection) {
             this.changeView(new ContactsView({
                 collection: contactCollection
             }));
-            contactCollection.fetch();
+            contactCollection.fetch({reset:true});
         }
     });
 

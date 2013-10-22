@@ -41,14 +41,14 @@ define(['SocialNetView', 'text!templates/contact.html'], function(SocialNetView,
             });
         },
 
-        initialize: function() {
+        initialize: function(options) {
             // Set the addButton variable in case it has been added in the constructor
-            if (this.options.addButton) {
-                this.addButton = this.options.addButton;
+            if (options.addButton) {
+                this.addButton = options.addButton;
             }
 
-            if (this.options.removeButton) {
-                this.removeButton = this.options.removeButton;
+            if (options.removeButton) {
+                this.removeButton = options.removeButton;
             }
         },
 

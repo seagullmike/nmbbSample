@@ -30,7 +30,7 @@ function(sio, ContactCollection, ChatView) {
                     collection: myContacts,
                     socketEvents: eventDispatcher
                 }).render();
-                myContacts.fetch();
+                myContacts.fetch({reset:true});
             });
         };
 

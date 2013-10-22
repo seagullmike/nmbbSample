@@ -1,11 +1,11 @@
 require.config({
     paths: {
-        jQuery: '/components/jquery/jquery',
-        Underscore: '/components/underscore/underscore',
-        Backbone: '/components/backbone/backbone',
+        jQuery: '/bower_components/jquery/jquery',
+        Underscore: '/bower_components/underscore/underscore',
+        Backbone: '/bower_components/backbone/backbone',
         Sockets: '/socket.io/socket.io',
         models: 'models',
-        text: '/components/text/text',
+        text: '/bower_components/requirejs.text/text',
         templates: '../templates' //, 
         //SocialNetView: '/js/SocialNetView'
     },
