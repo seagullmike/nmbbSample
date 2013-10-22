@@ -1,12 +1,6 @@
-<<<<<<< HEAD:public/bower_components/underscore/underscore.js
 //     Underscore.js 1.5.2
 //     http://underscorejs.org
 //     (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-=======
-//     Underscore.js 1.4.4
-//     http://underscorejs.org
-//     (c) 2009-2013 Jeremy Ashkenas, DocumentCloud Inc.
->>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/underscore.js
 //     Underscore may be freely distributed under the MIT license.
 
 (function() {
@@ -71,11 +65,7 @@
   }
 
   // Current version.
-<<<<<<< HEAD:public/bower_components/underscore/underscore.js
   _.VERSION = '1.5.2';
-=======
-  _.VERSION = '1.4.4';
->>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/underscore.js
 
   // Collection Functions
   // --------------------
@@ -248,11 +238,7 @@
   // Convenience version of a common use case of `filter`: selecting only objects
   // containing specific `key:value` pairs.
   _.where = function(obj, attrs, first) {
-<<<<<<< HEAD:public/bower_components/underscore/underscore.js
     if (_.isEmpty(attrs)) return first ? void 0 : [];
-=======
-    if (_.isEmpty(attrs)) return first ? null : [];
->>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/underscore.js
     return _[first ? 'find' : 'filter'](obj, function(value) {
       for (var key in attrs) {
         if (attrs[key] !== value[key]) return false;
@@ -604,11 +590,13 @@
   // Function (ahem) Functions
   // ------------------
 
+  // Reusable constructor function for prototype setting.
+  var ctor = function(){};
+
   // Create a function bound to a given object (assigning `this`, and arguments,
   // optionally). Delegates to **ECMAScript 5**'s native `Function.bind` if
   // available.
   _.bind = function(func, context) {
-<<<<<<< HEAD:public/bower_components/underscore/underscore.js
     var args, bound;
     if (nativeBind && func.bind === nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
     if (!_.isFunction(func)) throw new TypeError;
@@ -621,21 +609,6 @@
       var result = func.apply(self, args.concat(slice.call(arguments)));
       if (Object(result) === result) return result;
       return self;
-=======
-    if (func.bind === nativeBind && nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
-    var args = slice.call(arguments, 2);
-    return function() {
-      return func.apply(context, args.concat(slice.call(arguments)));
-    };
-  };
-
-  // Partially apply a function by creating a version that has had some of its
-  // arguments pre-filled, without changing its dynamic `this` context.
-  _.partial = function(func) {
-    var args = slice.call(arguments, 1);
-    return function() {
-      return func.apply(this, args.concat(slice.call(arguments)));
->>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/underscore.js
     };
   };
 
@@ -652,11 +625,7 @@
   // all callbacks defined on an object belong to it.
   _.bindAll = function(obj) {
     var funcs = slice.call(arguments, 1);
-<<<<<<< HEAD:public/bower_components/underscore/underscore.js
     if (funcs.length === 0) throw new Error("bindAll must be passed function names");
-=======
-    if (funcs.length === 0) funcs = _.functions(obj);
->>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/underscore.js
     each(funcs, function(f) { obj[f] = _.bind(obj[f], obj); });
     return obj;
   };

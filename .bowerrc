@@ -1,9 +1,3 @@
-<<<<<<< HEAD
 {
     "directory": "public/bower_components"
-=======
-{
-  "directory" : "public/components",
-  "json"      : "component.json"
->>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec
 }

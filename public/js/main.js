@@ -6,8 +6,8 @@ require.config({
         Sockets: '/socket.io/socket.io',
         models: 'models',
         text: '/bower_components/requirejs.text/text',
-        //SocialNetView: '/js/SocialNetView'
-        bootstrap: '/components/bootstrap/docs/assets/js/bootstrap.min',
+        SocialNetView: '/js/SocialNetView',
+        bootstrap: '/bower_components/bootstrap/dist/js/bootstrap.min',
         templates: '../templates'
     },
     
