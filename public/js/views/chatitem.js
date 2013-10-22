@@ -12,13 +12,13 @@ function(SocialNetView, chatItemTemplate) {
 
         initialize: function(options) {
             var accountId = this.model.get('accountId');
-            options.socketEvents.bind('login:' + accountId,
+            options.socketEvents.on('login:' + accountId,
             this.handleContactLogin,
             this);
-            options.socketEvents.bind('logout:' + accountId,
+            options.socketEvents.on('logout:' + accountId,
             this.handleContactLogout,
             this);
-            options.socketEvents.bind('socket:chat:start:' + accountId,
+            options.socketEvents.on('socket:chat:start:' + accountId,
             this.startChatSession,
             this);
         },
@@ -30,7 +30,7 @@ function(SocialNetView, chatItemTemplate) {
 
         handleContactLogout: function() {
             this.model.set('online', false);
-            var  $onlineIndicator = this.$el.find('.online_indicator');
+            var $onlineIndicator = this.$el.find('.online_indicator');
             while ($onlineIndicator.hasClass('online')) {
                 $onlineIndicator.removeClass('online');
             }

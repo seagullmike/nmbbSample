@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
  * QUnit v1.12.0 - A JavaScript Unit Testing Framework
+=======
+ * QUnit v1.11.0 - A JavaScript Unit Testing Framework
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
  *
  * http://qunitjs.com
  *
@@ -221,7 +225,11 @@ Test.prototype = {
 			if ( typeof this.callbackRuntime === "undefined" ) {
 				this.callbackRuntime = +new Date() - this.callbackStarted;
 			}
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 			this.testEnvironment.teardown.call( this.testEnvironment, QUnit.assert );
+=======
+			this.testEnvironment.teardown.call( this.testEnvironment );
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 			return;
 		} else {
 			try {
@@ -500,7 +508,11 @@ QUnit = {
 };
 
 // `assert` initialized at top of scope
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 // Assert helpers
+=======
+// Asssert helpers
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 // All of these must either call QUnit.push() or manually do:
 // - runLoggingCallbacks( "log", .. );
 // - config.current.assertions.push({ .. });
@@ -528,7 +540,12 @@ assert = {
 				message: msg
 			};
 
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 		msg = "<span class='test-message'>" + escapeText( msg ) + "</span>";
+=======
+		msg = escapeText( msg || (result ? "okay" : "failed" ) );
+		msg = "<span class='test-message'>" + msg + "</span>";
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 
 		if ( !result ) {
 			source = sourceFromStacktrace( 2 );
@@ -661,7 +678,11 @@ assert = {
 };
 
 /**
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
  * @deprecated since 1.8.0
+=======
+ * @deprecate since 1.8.0
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
  * Kept assertion helpers in root for backwards compatibility.
  */
 extend( QUnit, assert );
@@ -750,7 +771,11 @@ config = {
 // Export global variables, unless an 'exports' object exists,
 // in that case we assume we're in CommonJS (dealt with on the bottom of the script)
 if ( typeof exports === "undefined" ) {
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 	extend( window, QUnit.constructor.prototype );
+=======
+	extend( window, QUnit );
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 
 	// Expose QUnit object
 	window.QUnit = QUnit;
@@ -1064,7 +1089,10 @@ QUnit.load = function() {
 	var banner, filter, i, label, len, main, ol, toolbar, userAgent, val,
 		urlConfigCheckboxesContainer, urlConfigCheckboxes, moduleFilter,
 		numModules = 0,
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 		moduleNames = [],
+=======
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 		moduleFilterHtml = "",
 		urlConfigHtml = "",
 		oldconfig = extend( {}, config );
@@ -1093,9 +1121,23 @@ QUnit.load = function() {
 			"'><label for='qunit-urlconfig-" + escapeText( val.id ) +
 			"' title='" + escapeText( val.tooltip ) + "'>" + val.label + "</label>";
 	}
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 	for ( i in config.modules ) {
 		if ( config.modules.hasOwnProperty( i ) ) {
 			moduleNames.push(i);
+=======
+
+	moduleFilterHtml += "<label for='qunit-modulefilter'>Module: </label><select id='qunit-modulefilter' name='modulefilter'><option value='' " +
+		( config.module === undefined  ? "selected='selected'" : "" ) +
+		">< All Modules ></option>";
+
+	for ( i in config.modules ) {
+		if ( config.modules.hasOwnProperty( i ) ) {
+			numModules += 1;
+			moduleFilterHtml += "<option value='" + escapeText( encodeURIComponent(i) ) + "' " +
+				( config.module === i ? "selected='selected'" : "" ) +
+				">" + escapeText(i) + "</option>";
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 		}
 	}
 	numModules = moduleNames.length;
@@ -1419,6 +1461,7 @@ function escapeText( s ) {
 	// Both single quotes and double quotes (for attributes)
 	return s.replace( /['"<>&]/g, function( s ) {
 		switch( s ) {
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 			case "'":
 				return "&#039;";
 			case "\"":
@@ -1429,6 +1472,18 @@ function escapeText( s ) {
 				return "&gt;";
 			case "&":
 				return "&amp;";
+=======
+			case '\'':
+				return '&#039;';
+			case '"':
+				return '&quot;';
+			case '<':
+				return '&lt;';
+			case '>':
+				return '&gt;';
+			case '&':
+				return '&amp;';
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 		}
 	});
 }
@@ -1573,8 +1628,13 @@ function removeClass( elem, name ) {
 	while ( set.indexOf(" " + name + " ") > -1 ) {
 		set = set.replace(" " + name + " " , " ");
 	}
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 	// If possible, trim it for prettiness, but not necessarily
 	elem.className = typeof set.trim === "function" ? set.trim() : set.replace(/^\s+|\s+$/g, "");
+=======
+	// If possible, trim it for prettiness, but not neccecarily
+	elem.className = window.jQuery ? jQuery.trim( set ) : ( set.trim ? set.trim() : set );
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 }
 
 function id( name ) {
@@ -2097,6 +2157,7 @@ QUnit.diff = (function() {
 		}
 
 		for ( i in ns ) {
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 			if ( hasOwn.call( ns, i ) ) {
 				if ( ns[i].rows.length === 1 && hasOwn.call( os, i ) && os[i].rows.length === 1 ) {
 					n[ ns[i].rows[0] ] = {
@@ -2108,6 +2169,20 @@ QUnit.diff = (function() {
 						row: ns[i].rows[0]
 					};
 				}
+=======
+			if ( !hasOwn.call( ns, i ) ) {
+				continue;
+			}
+			if ( ns[i].rows.length === 1 && hasOwn.call( os, i ) && os[i].rows.length === 1 ) {
+				n[ ns[i].rows[0] ] = {
+					text: n[ ns[i].rows[0] ],
+					row: os[i].rows[0]
+				};
+				o[ os[i].rows[0] ] = {
+					text: o[ os[i].rows[0] ],
+					row: ns[i].rows[0]
+				};
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 			}
 		}
 
@@ -2205,7 +2280,11 @@ QUnit.diff = (function() {
 
 // for CommonJS environments, export everything
 if ( typeof exports !== "undefined" ) {
+<<<<<<< HEAD:public/bower_components/underscore/test/vendor/qunit.js
 	extend( exports, QUnit.constructor.prototype );
+=======
+	extend( exports, QUnit );
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/vendor/qunit.js
 }
 
 // get at whatever the global object is, like window in browsers

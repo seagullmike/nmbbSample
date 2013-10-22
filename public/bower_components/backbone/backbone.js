@@ -1,7 +1,13 @@
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
 //     Backbone.js 1.1.0
 
 //     (c) 2010-2011 Jeremy Ashkenas, DocumentCloud Inc.
 //     (c) 2011-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+=======
+//     Backbone.js 1.0.0
+
+//     (c) 2010-2013 Jeremy Ashkenas, DocumentCloud Inc.
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
 //     Backbone may be freely distributed under the MIT license.
 //     For all details and documentation:
 //     http://backbonejs.org
@@ -35,7 +41,11 @@
   }
 
   // Current version of the library. Keep in sync with `package.json`.
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
   Backbone.VERSION = '1.1.0';
+=======
+  Backbone.VERSION = '1.0.0';
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
 
   // Require Underscore, if we're on the server, and it's not already present.
   var _ = root._;
@@ -151,6 +161,7 @@
     // Tell this object to stop listening to either specific events ... or
     // to every object it's currently listening to.
     stopListening: function(obj, name, callback) {
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       var listeningTo = this._listeningTo;
       if (!listeningTo) return this;
       var remove = !name && !callback;
@@ -160,6 +171,16 @@
         obj = listeningTo[id];
         obj.off(name, callback, this);
         if (remove || _.isEmpty(obj._events)) delete this._listeningTo[id];
+=======
+      var listeners = this._listeners;
+      if (!listeners) return this;
+      var deleteListener = !name && !callback;
+      if (typeof name === 'object') callback = this;
+      if (obj) (listeners = {})[obj._listenerId] = obj;
+      for (var id in listeners) {
+        listeners[id].off(name, callback, this);
+        if (deleteListener) delete this._listeners[id];
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
       }
       return this;
     }
@@ -216,10 +237,17 @@
   // listening to.
   _.each(listenMethods, function(implementation, method) {
     Events[method] = function(obj, name, callback) {
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       var listeningTo = this._listeningTo || (this._listeningTo = {});
       var id = obj._listenId || (obj._listenId = _.uniqueId('l'));
       listeningTo[id] = obj;
       if (!callback && typeof name === 'object') callback = this;
+=======
+      var listeners = this._listeners || (this._listeners = {});
+      var id = obj._listenerId || (obj._listenerId = _.uniqueId('l'));
+      listeners[id] = obj;
+      if (typeof name === 'object') callback = this;
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
       obj[implementation](name, callback, this);
       return this;
     };
@@ -248,13 +276,24 @@
     options || (options = {});
     this.cid = _.uniqueId('c');
     this.attributes = {};
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
     if (options.collection) this.collection = options.collection;
     if (options.parse) attrs = this.parse(attrs, options) || {};
     attrs = _.defaults({}, attrs, _.result(this, 'defaults'));
+=======
+    _.extend(this, _.pick(options, modelOptions));
+    if (options.parse) attrs = this.parse(attrs, options) || {};
+    if (defaults = _.result(this, 'defaults')) {
+      attrs = _.defaults({}, attrs, defaults);
+    }
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     this.set(attrs, options);
     this.changed = {};
     this.initialize.apply(this, arguments);
   };
+
+  // A list of options to be attached directly to the model, if provided.
+  var modelOptions = ['url', 'urlRoot', 'collection'];
 
   // Attach all inheritable methods to the Model prototype.
   _.extend(Model.prototype, Events, {
@@ -451,6 +490,7 @@
         (attrs = {})[key] = val;
       }
 
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       options = _.extend({validate: true}, options);
 
       // If we're not waiting and attributes exist, save acts as
@@ -462,6 +502,16 @@
         if (!this._validate(attrs, options)) return false;
       }
 
+=======
+      // If we're not waiting and attributes exist, save acts as `set(attr).save(null, opts)`.
+      if (attrs && (!options || !options.wait) && !this.set(attrs, options)) return false;
+
+      options = _.extend({validate: true}, options);
+
+      // Do not persist invalid models.
+      if (!this._validate(attrs, options)) return false;
+
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
       // Set temporary attributes if `{wait: true}`.
       if (attrs && options.wait) {
         this.attributes = _.extend({}, attributes, attrs);
@@ -561,7 +611,11 @@
       attrs = _.extend({}, this.attributes, attrs);
       var error = this.validationError = this.validate(attrs, options) || null;
       if (!error) return true;
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       this.trigger('invalid', this, error, _.extend(options, {validationError: error}));
+=======
+      this.trigger('invalid', this, error, _.extend(options || {}, {validationError: error}));
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
       return false;
     }
 
@@ -594,6 +648,7 @@
   // its models in sort order, as they're added and removed.
   var Collection = Backbone.Collection = function(models, options) {
     options || (options = {});
+    if (options.url) this.url = options.url;
     if (options.model) this.model = options.model;
     if (options.comparator !== void 0) this.comparator = options.comparator;
     this._reset();
@@ -603,7 +658,11 @@
 
   // Default options for `Collection#set`.
   var setOptions = {add: true, remove: true, merge: true};
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
   var addOptions = {add: true, remove: false};
+=======
+  var addOptions = {add: true, merge: false, remove: false};
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
 
   // Define the Collection's inheritable methods.
   _.extend(Collection.prototype, Events, {
@@ -629,17 +688,29 @@
 
     // Add a model, or list of models to the set.
     add: function(models, options) {
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       return this.set(models, _.extend({merge: false}, options, addOptions));
+=======
+      return this.set(models, _.defaults(options || {}, addOptions));
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     },
 
     // Remove a model, or a list of models from the set.
     remove: function(models, options) {
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       var singular = !_.isArray(models);
       models = singular ? [models] : _.clone(models);
       options || (options = {});
       var i, l, index, model;
       for (i = 0, l = models.length; i < l; i++) {
         model = models[i] = this.get(models[i]);
+=======
+      models = _.isArray(models) ? models.slice() : [models];
+      options || (options = {});
+      var i, l, index, model;
+      for (i = 0, l = models.length; i < l; i++) {
+        model = this.get(models[i]);
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
         if (!model) continue;
         delete this._byId[model.id];
         delete this._byId[model.cid];
@@ -652,7 +723,11 @@
         }
         this._removeReference(model);
       }
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       return singular ? models[0] : models;
+=======
+      return this;
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     },
 
     // Update a collection by `set`-ing a new list of models, adding new ones,
@@ -660,6 +735,7 @@
     // already exist in the collection, as necessary. Similar to **Model#set**,
     // the core operation for updating the data contained by the collection.
     set: function(models, options) {
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       options = _.defaults({}, options, setOptions);
       if (options.parse) models = this.parse(models, options);
       var singular = !_.isArray(models);
@@ -672,10 +748,21 @@
       var toAdd = [], toRemove = [], modelMap = {};
       var add = options.add, merge = options.merge, remove = options.remove;
       var order = !sortable && add && remove ? [] : false;
+=======
+      options = _.defaults(options || {}, setOptions);
+      if (options.parse) models = this.parse(models, options);
+      if (!_.isArray(models)) models = models ? [models] : [];
+      var i, l, model, attrs, existing, sort;
+      var at = options.at;
+      var sortable = this.comparator && (at == null) && options.sort !== false;
+      var sortAttr = _.isString(this.comparator) ? this.comparator : null;
+      var toAdd = [], toRemove = [], modelMap = {};
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
 
       // Turn bare objects into model references, and prevent invalid models
       // from being added.
       for (i = 0, l = models.length; i < l; i++) {
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
         attrs = models[i];
         if (attrs instanceof Model) {
           id = model = attrs;
@@ -699,6 +786,21 @@
         } else if (add) {
           model = models[i] = this._prepareModel(attrs, options);
           if (!model) continue;
+=======
+        if (!(model = this._prepareModel(models[i], options))) continue;
+
+        // If a duplicate is found, prevent it from being added and
+        // optionally merge it into the existing model.
+        if (existing = this.get(model)) {
+          if (options.remove) modelMap[existing.cid] = true;
+          if (options.merge) {
+            existing.set(model.attributes, options);
+            if (sortable && !sort && existing.hasChanged(sortAttr)) sort = true;
+          }
+
+        // This is a new model, push it to the `toAdd` list.
+        } else if (options.add) {
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
           toAdd.push(model);
 
           // Listen to added models' events, and index models for lookup by
@@ -707,11 +809,18 @@
           this._byId[model.cid] = model;
           if (model.id != null) this._byId[model.id] = model;
         }
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
         if (order) order.push(existing || model);
       }
 
       // Remove nonexistent models if appropriate.
       if (remove) {
+=======
+      }
+
+      // Remove nonexistent models if appropriate.
+      if (options.remove) {
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
         for (i = 0, l = this.length; i < l; ++i) {
           if (!modelMap[(model = this.models[i]).cid]) toRemove.push(model);
         }
@@ -719,6 +828,7 @@
       }
 
       // See if sorting is needed, update `length` and splice in new models.
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       if (toAdd.length || (order && order.length)) {
         if (sortable) sort = true;
         this.length += toAdd.length;
@@ -748,6 +858,31 @@
       
       // Return the added (or merged) model (or models).
       return singular ? models[0] : models;
+=======
+      if (toAdd.length) {
+        if (sortable) sort = true;
+        this.length += toAdd.length;
+        if (at != null) {
+          splice.apply(this.models, [at, 0].concat(toAdd));
+        } else {
+          push.apply(this.models, toAdd);
+        }
+      }
+
+      // Silently sort the collection if appropriate.
+      if (sort) this.sort({silent: true});
+
+      if (options.silent) return this;
+
+      // Trigger `add` events.
+      for (i = 0, l = toAdd.length; i < l; i++) {
+        (model = toAdd[i]).trigger('add', model, this, options);
+      }
+
+      // Trigger `sort` if the collection was sorted.
+      if (sort) this.trigger('sort', this, options);
+      return this;
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     },
 
     // When you have more items than you want to add or remove individually,
@@ -761,9 +896,15 @@
       }
       options.previousModels = this.models;
       this._reset();
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       models = this.add(models, _.extend({silent: true}, options));
       if (!options.silent) this.trigger('reset', this, options);
       return models;
+=======
+      this.add(models, _.extend({silent: true}, options));
+      if (!options.silent) this.trigger('reset', this, options);
+      return this;
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     },
 
     // Add a model to the end of the collection.
@@ -798,7 +939,11 @@
     // Get a model from the set by id.
     get: function(obj) {
       if (obj == null) return void 0;
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       return this._byId[obj.id] || this._byId[obj.cid] || this._byId[obj];
+=======
+      return this._byId[obj.id != null ? obj.id : obj.cid || obj];
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     },
 
     // Get the model at the given index.
@@ -842,6 +987,16 @@
       return this;
     },
 
+    // Figure out the smallest index at which a model should be inserted so as
+    // to maintain order.
+    sortedIndex: function(model, value, context) {
+      value || (value = this.comparator);
+      var iterator = _.isFunction(value) ? value : function(model) {
+        return model.get(value);
+      };
+      return _.sortedIndex(this.models, model, iterator, context);
+    },
+
     // Pluck an attribute from each model in the collection.
     pluck: function(attr) {
       return _.invoke(this.models, 'get', attr);
@@ -874,7 +1029,7 @@
       if (!options.wait) this.add(model, options);
       var collection = this;
       var success = options.success;
-      options.success = function(model, resp, options) {
+      options.success = function(resp) {
         if (options.wait) collection.add(model, options);
         if (success) success(model, resp, options);
       };
@@ -911,9 +1066,17 @@
       options = options ? _.clone(options) : {};
       options.collection = this;
       var model = new this.model(attrs, options);
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
       if (!model.validationError) return model;
       this.trigger('invalid', this, model.validationError, options);
       return false;
+=======
+      if (!model._validate(attrs, options)) {
+        this.trigger('invalid', this, attrs, options);
+        return false;
+      }
+      return model;
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     },
 
     // Internal method to sever a model's ties to a collection.
@@ -945,8 +1108,13 @@
     'inject', 'reduceRight', 'foldr', 'find', 'detect', 'filter', 'select',
     'reject', 'every', 'all', 'some', 'any', 'include', 'contains', 'invoke',
     'max', 'min', 'toArray', 'size', 'first', 'head', 'take', 'initial', 'rest',
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
     'tail', 'drop', 'last', 'without', 'difference', 'indexOf', 'shuffle',
     'lastIndexOf', 'isEmpty', 'chain'];
+=======
+    'tail', 'drop', 'last', 'without', 'indexOf', 'shuffle', 'lastIndexOf',
+    'isEmpty', 'chain'];
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
 
   // Mix in each Underscore method as a proxy to `Collection#models`.
   _.each(methods, function(method) {
@@ -985,8 +1153,12 @@
   // if an existing element is not provided...
   var View = Backbone.View = function(options) {
     this.cid = _.uniqueId('view');
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
     options || (options = {});
     _.extend(this, _.pick(options, viewOptions));
+=======
+    this._configure(options || {});
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     this._ensureElement();
     this.initialize.apply(this, arguments);
     this.delegateEvents();
@@ -1005,7 +1177,11 @@
     tagName: 'div',
 
     // jQuery delegate for element lookup, scoped to DOM elements within the
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
     // current view. This should be preferred to global lookups where possible.
+=======
+    // current view. This should be prefered to global lookups where possible.
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     $: function(selector) {
       return this.$el.find(selector);
     },
@@ -1045,7 +1221,11 @@
     //
     //     {
     //       'mousedown .title':  'edit',
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
     //       'click .button':     'save',
+=======
+    //       'click .button':     'save'
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     //       'click .open':       function(e) { ... }
     //     }
     //
@@ -1083,6 +1263,19 @@
       return this;
     },
 
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
+=======
+    // Performs the initial configuration of a View with a set of options.
+    // Keys with special meaning *(e.g. model, collection, id, className)* are
+    // attached directly to the view.  See `viewOptions` for an exhaustive
+    // list.
+    _configure: function(options) {
+      if (this.options) options = _.extend({}, _.result(this, 'options'), options);
+      _.extend(this, _.pick(options, viewOptions));
+      this.options = options;
+    },
+
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     // Ensure that the View has a DOM element to render into.
     // If `this.el` is a string, pass it through `$()`, take the first
     // matching element, and re-assign it to `el`. Otherwise, create
@@ -1168,7 +1361,12 @@
     // If we're sending a `PATCH` request, and we're in an old Internet Explorer
     // that still has ActiveX enabled by default, override jQuery to use that
     // for XHR instead. Remove this line when jQuery supports `PATCH` on IE8.
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
     if (params.type === 'PATCH' && noXhrPatch) {
+=======
+    if (params.type === 'PATCH' && window.ActiveXObject &&
+          !(window.external && window.external.msActiveXFilteringEnabled)) {
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
       params.xhr = function() {
         return new ActiveXObject("Microsoft.XMLHTTP");
       };
@@ -1180,8 +1378,11 @@
     return xhr;
   };
 
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
   var noXhrPatch = typeof window !== 'undefined' && !!window.ActiveXObject && !(window.XMLHttpRequest && (new XMLHttpRequest).dispatchEvent);
 
+=======
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
   // Map from CRUD to HTTP for our default `Backbone.sync` implementation.
   var methodMap = {
     'create': 'POST',
@@ -1270,7 +1471,11 @@
     _routeToRegExp: function(route) {
       route = route.replace(escapeRegExp, '\\$&')
                    .replace(optionalParam, '(?:$1)?')
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
                    .replace(namedParam, function(match, optional) {
+=======
+                   .replace(namedParam, function(match, optional){
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
                      return optional ? match : '([^\/]+)';
                    })
                    .replace(splatParam, '(.*?)');
@@ -1570,7 +1775,11 @@
   };
 
   // Wrap an optional error callback with a fallback error event.
+<<<<<<< HEAD:public/bower_components/backbone/backbone.js
   var wrapError = function(model, options) {
+=======
+  var wrapError = function (model, options) {
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/backbone.js
     var error = options.error;
     options.error = function(resp) {
       if (error) error(model, resp, options);

@@ -1,13 +1,6 @@
-.DS_Store
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+node_modules/
 
+<<<<<<< HEAD
 .svn
 
 pids
@@ -20,3 +13,8 @@ npm-debug.log
 mail.js
 
 .c9revisions
+=======
+# clould 9 ide folders and files
+.c9revisions/
+*.c9save
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec

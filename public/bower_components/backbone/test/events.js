@@ -152,6 +152,7 @@
     e.trigger("foo");
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/events.js
   test("stopListening cleans up references", 4, function() {
     var a = _.extend({}, Backbone.Events);
     var b = _.extend({}, Backbone.Events);
@@ -177,6 +178,8 @@
     equal(_.keys(a._listeningTo).length, 0);
   });
 
+=======
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/events.js
   test("listenTo with empty callback doesn't throw an error", 1, function(){
     var e = _.extend({}, Backbone.Events);
     e.listenTo(e, "foo", null);
@@ -474,4 +477,8 @@
     equal(obj, obj.stopListening());
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/events.js
 })();
+=======
+});
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/events.js

@@ -34,10 +34,15 @@ $(document).ready(function() {
     // To test this with a modern browser, set underscore's nativeBind to undefined
     var F = function () { return this; };
     var Boundf = _.bind(F, {hello: "moe curly"});
-    var newBoundf = new Boundf();
-    equal(newBoundf.hello, undefined, "function should not be bound to the context, to comply with ECMAScript 5");
     equal(Boundf().hello, "moe curly", "When called without the new operator, it's OK to be bound to the context");
-    ok(newBoundf instanceof F, "a bound instance is an instance of the original function");
+  });
+
+  test("partial", function() {
+    var obj = {name: 'moe'};
+    var func = function() { return this.name + ' ' + _.toArray(arguments).join(' '); };
+
+    obj.func = _.partial(func, 'a', 'b');
+    equal(obj.func('c', 'd'), 'moe a b c d', 'can partially apply');
   });
 
   test("partial", function() {
@@ -138,6 +143,7 @@ $(document).ready(function() {
     var counter = 0;
     var incr = function(){ counter++; };
     var throttledIncr = _.throttle(incr, 32);
+<<<<<<< HEAD:public/bower_components/underscore/test/functions.js
     throttledIncr(); throttledIncr();
     _.delay(function(){ equal(counter, 2, "incr was called twice"); start(); }, 64);
   });
@@ -154,19 +160,30 @@ $(document).ready(function() {
       ok(counter == 3);
       start();
     }, 85);
+=======
+    throttledIncr(); throttledIncr();
+    _.delay(function(){ equal(counter, 2, "incr was called twice"); start(); }, 64);
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/test/functions.js
   });
 
   asyncTest("throttle repeatedly with results", 6, function() {
     var counter = 0;
     var incr = function(){ return ++counter; };
-    var throttledIncr = _.throttle(incr, 100);
+    var throttledIncr = _.throttle(incr, 64);
     var results = [];
     var saveResult = function() { results.push(throttledIncr()); };
     saveResult(); saveResult();
+<<<<<<< HEAD:public/bower_components/underscore/test/functions.js
     _.delay(saveResult, 50);
     _.delay(saveResult, 150);
     _.delay(saveResult, 160);
     _.delay(saveResult, 230);
+=======
+    _.delay(saveResult, 32);
+    _.delay(saveResult, 80);
+    _.delay(saveResult, 96);
+    _.delay(saveResult, 144);
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/test/functions.js
     _.delay(function() {
       equal(results[0], 1, "incr was called once");
       equal(results[1], 1, "incr was throttled");
@@ -175,7 +192,11 @@ $(document).ready(function() {
       equal(results[4], 2, "incr was throttled");
       equal(results[5], 3, "incr was called trailing");
       start();
+<<<<<<< HEAD:public/bower_components/underscore/test/functions.js
     }, 300);
+=======
+    }, 192);
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/test/functions.js
   });
 
   asyncTest("throttle triggers trailing call when invoked repeatedly", 2, function() {
@@ -190,6 +211,7 @@ $(document).ready(function() {
     }
     var lastCount = counter;
     ok(counter > 1);
+<<<<<<< HEAD:public/bower_components/underscore/test/functions.js
 
     _.delay(function() {
       ok(counter > lastCount);
@@ -266,6 +288,13 @@ $(document).ready(function() {
         start();
       }, 96);
     }, 96);
+=======
+
+    _.delay(function() {
+      ok(counter > lastCount);
+      start();
+    }, 96);
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/test/functions.js
   });
 
   asyncTest("debounce", 1, function() {

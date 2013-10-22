@@ -5,10 +5,12 @@ define(['router', 'SocialNetSockets'], function(router, socket) {
     };
 
     var checkLogin = function(callback) {
-        $.get('/account/authenticated').done(function(data) {
+        $.get('/account/authenticated')
+        .done(function(data) {
             router.socketEvents.trigger('app:loggedin', data);
             return callback(true);
-        }).fail(function() {
+        })
+        .fail(function() {
             return callback(false);
         });
     };

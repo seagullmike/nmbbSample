@@ -225,6 +225,7 @@
   });
 
   test("add with parse and merge", function() {
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
     var collection = new Backbone.Collection();
     collection.parse = function(attrs) {
       return _.map(attrs, function(model) {
@@ -232,6 +233,15 @@
         return model;
       });
     };
+=======
+    var Model = Backbone.Model.extend({
+      parse: function (data) {
+        return data.model;
+      }
+    });
+    var collection = new Backbone.Collection();
+    collection.model = Model;
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
     collection.add({id: 1});
     collection.add({model: {id: 1, name: 'Alf'}}, {parse: true, merge: true});
     equal(collection.first().get('name'), 'Alf');
@@ -470,7 +480,11 @@
     equal(model.collection, collection);
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
   test("create with validate:true enforces validation", 3, function() {
+=======
+  test("create with validate:true enforces validation", 2, function() {
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
     var ValidatingModel = Backbone.Model.extend({
       validate: function(attrs) {
         return "fail";
@@ -480,8 +494,12 @@
       model: ValidatingModel
     });
     var col = new ValidatingCollection();
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
     col.on('invalid', function (collection, error, options) {
       equal(error, "fail");
+=======
+    col.on('invalid', function (collection, attrs, options) {
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
       equal(options.validationError, 'fail');
     });
     equal(col.create({"foo":"bar"}, {validate:true}), false);
@@ -556,6 +574,21 @@
     deepEqual(col.difference([c, d]), [a, b]);
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
+=======
+  test("sortedIndex", function () {
+    var model = new Backbone.Model({key: 2});
+    var collection = new (Backbone.Collection.extend({
+      comparator: 'key'
+    }))([model, {key: 1}]);
+    equal(collection.sortedIndex(model), 1);
+    equal(collection.sortedIndex(model, 'key'), 1);
+    equal(collection.sortedIndex(model, function (model) {
+      return model.get('key');
+    }), 1);
+  });
+
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
   test("reset", 12, function() {
     var resetCount = 0;
     var models = col.models;
@@ -942,6 +975,7 @@
     strictEqual(c.length, 0);
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
   test("set with many models does not overflow the stack", function() {
     var n = 150000;
     var collection = new Backbone.Collection();
@@ -956,6 +990,8 @@
     equal(collection.length, n);
   });
 
+=======
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
   test("set with only cids", 3, function() {
     var m1 = new Backbone.Model;
     var m2 = new Backbone.Model;
@@ -999,6 +1035,7 @@
     equal(col.first().get('key'), 'other');
 
     col.set({id: 1, other: 'value'});
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
     equal(col.first().get('key'), 'other');
     equal(col.length, 1);
   });
@@ -1026,6 +1063,19 @@
     var Collection = Backbone.Collection.extend({
       model: Model,
       parse: function (res) { return _.pluck(res.models, 'model'); }
+=======
+    equal(col.first().get('key'), 'value');
+    equal(col.length, 1);
+  });
+
+  test("`set` and model level `parse`", function() {
+    var Model = Backbone.Model.extend({
+      parse: function (res) { return res.model; }
+    });
+    var Collection = Backbone.Collection.extend({
+      model: Model,
+      parse: function (res) { return res.models; }
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
     });
     var model = new Model({id: 1});
     var collection = new Collection(model);
@@ -1048,6 +1098,7 @@
     collection.set({}, {parse: true});
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
   test('`set` matches input order in the absence of a comparator', function () {
     var one = new Backbone.Model({id: 1});
     var two = new Backbone.Model({id: 2});
@@ -1067,6 +1118,8 @@
     deepEqual(collection.models, [one, two, three]);
   });
 
+=======
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
   test("#1894 - Push should not trigger a sort", 0, function() {
     var Collection = Backbone.Collection.extend({
       comparator: 'id',
@@ -1077,6 +1130,7 @@
     new Collection().push({id: 1});
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
   test("#2428 - push duplicate models, return the correct one", 1, function() {
     var col = new Backbone.Collection;
     var model1 = col.push({id: 101});
@@ -1084,6 +1138,8 @@
     ok(model2.cid == model1.cid);
   });
 
+=======
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
   test("`set` with non-normal id", function() {
     var Collection = Backbone.Collection.extend({
       model: Backbone.Model.extend({idAttribute: '_id'})
@@ -1129,6 +1185,53 @@
       success: function () { start(); }
     });
     Backbone.ajax = ajax;
+<<<<<<< HEAD:public/bower_components/backbone/test/collection.js
+=======
+  });
+
+  test("`add` only `sort`s when necessary", 2, function () {
+    var collection = new (Backbone.Collection.extend({
+      comparator: 'a'
+    }))([{id: 1}, {id: 2}, {id: 3}]);
+    collection.on('sort', function () { ok(true); });
+    collection.add({id: 4}); // do sort, new model
+    collection.add({id: 1, a: 1}, {merge: true}); // do sort, comparator change
+    collection.add({id: 1, b: 1}, {merge: true}); // don't sort, no comparator change
+    collection.add({id: 1, a: 1}, {merge: true}); // don't sort, no comparator change
+    collection.add(collection.models); // don't sort, nothing new
+    collection.add(collection.models, {merge: true}); // don't sort
+  });
+
+  test("`add` only `sort`s when necessary with comparator function", 3, function () {
+    var collection = new (Backbone.Collection.extend({
+      comparator: function(a, b) {
+        return a.get('a') > b.get('a') ? 1 : (a.get('a') < b.get('a') ? -1 : 0);
+      }
+    }))([{id: 1}, {id: 2}, {id: 3}]);
+    collection.on('sort', function () { ok(true); });
+    collection.add({id: 4}); // do sort, new model
+    collection.add({id: 1, a: 1}, {merge: true}); // do sort, model change
+    collection.add({id: 1, b: 1}, {merge: true}); // do sort, model change
+    collection.add({id: 1, a: 1}, {merge: true}); // don't sort, no model change
+    collection.add(collection.models); // don't sort, nothing new
+    collection.add(collection.models, {merge: true}); // don't sort
+  });
+
+  test("Attach options to collection.", 3, function() {
+      var url = '/somewhere';
+      var model = new Backbone.Model;
+      var comparator = function(){};
+
+      var collection = new Backbone.Collection([], {
+        url: url,
+        model: model,
+        comparator: comparator
+      });
+
+      strictEqual(collection.url, url);
+      ok(collection.model === model);
+      ok(collection.comparator === comparator);
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/collection.js
   });
 
   test("`add` only `sort`s when necessary", 2, function () {

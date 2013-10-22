@@ -630,6 +630,7 @@
     deepEqual({home: "root", index: "index.html", show: "show", search: "search"}, router.routes);
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/router.js
   test("#2538 - hashChange to pushState only if both requested.", 0, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root?a=b#x/y');
@@ -727,3 +728,6 @@
   });
 
 })();
+=======
+});
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/router.js

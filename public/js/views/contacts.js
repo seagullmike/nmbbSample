@@ -5,7 +5,7 @@ function(SocialNetView, ContactView, contactsTemplate) {
         el: $('#content'),
 
         initialize: function() {
-            this.collection.on('reset', this.renderCollection, this);
+            this.listenTo(this.collection,'reset',this.renderCollection);
         },
 
         render: function() {

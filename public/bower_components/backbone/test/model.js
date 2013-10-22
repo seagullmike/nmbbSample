@@ -110,6 +110,16 @@
     equal(model.url(), '/nested/1/collection/2');
   });
 
+<<<<<<< HEAD:public/bower_components/backbone/test/model.js
+=======
+  test('url and urlRoot are directly attached if passed in the options', 2, function () {
+    var model = new Backbone.Model({a: 1}, {url: '/test'});
+    var model2 = new Backbone.Model({a: 2}, {urlRoot: '/test2'});
+    equal(model.url, '/test');
+    equal(model2.urlRoot, '/test2');
+  });
+
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/model.js
   test("underscore methods", 5, function() {
     var model = new Backbone.Model({ 'foo': 'a', 'bar': 'b', 'baz': 'c' });
     var model2 = model.clone();
@@ -688,11 +698,19 @@
   test("hasChanged gets cleared on the following set", 4, function() {
     var model = new Backbone.Model;
     model.set({x: 1});
+<<<<<<< HEAD:public/bower_components/backbone/test/model.js
     ok(model.hasChanged());
     model.set({x: 1});
     ok(!model.hasChanged());
     model.set({x: 2});
     ok(model.hasChanged());
+=======
+    ok(model.hasChanged());
+    model.set({x: 1});
+    ok(!model.hasChanged());
+    model.set({x: 2});
+    ok(model.hasChanged());
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/backbone/test/model.js
     model.set({});
     ok(!model.hasChanged());
   });

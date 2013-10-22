@@ -1,6 +1,10 @@
 desc "Use Uglify JS to compress Underscore.js"
 task :build do
+<<<<<<< HEAD:public/bower_components/underscore/Rakefile
   sh "uglifyjs underscore.js -c \"evaluate=false\" --comments \"/    .*/\" -m --source-map underscore-min.map -o underscore-min.js"
+=======
+  sh "uglifyjs underscore.js -c \"evaluate=false\" -m -o underscore-min.js"
+>>>>>>> dc10ae0f782d5718cc50d89ba8f3272ae6fec3ec:public/components/underscore/Rakefile
 end
 
 desc "Build the docco documentation"

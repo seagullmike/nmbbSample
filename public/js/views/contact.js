@@ -16,8 +16,8 @@ define(['SocialNetView', 'text!templates/contact.html'], function(SocialNetView,
             var posted = $.post('/accounts/me/contact', {
                 contactId: this.model.get('_id')
             });
-            posted.done(function() {
-                //console.log('addContact->Success');
+            posted.done(function(data) {
+                console.log('addContact->Success' + data);
                 $responseArea.text('Contact Added: ' + that.model.get('name').first);
             });
             posted.fail(function() {
@@ -28,15 +28,19 @@ define(['SocialNetView', 'text!templates/contact.html'], function(SocialNetView,
         removeContact: function() {
             var $responseArea = this.$('.actionarea');
             $responseArea.text('Removing contact...');
-            $.ajax({
+            var ajax = $.ajax({
                 url: '/accounts/me/contact',
                 type: 'DELETE',
                 data: {
                     contactId: this.model.get('accountId')
                 }
-            }).done(function() {
+            });
+            
+            ajax.done(function() {
                 $responseArea.text('Contact Removed');
-            }).fail(function() {
+            });
+            
+            ajax.fail(function() {
                 $responseArea.text('Could not remove contact');
             });
         },

@@ -10,26 +10,31 @@ function(SocialNetView, Contact, ContactView, addcontactTemplate) {
 
         search: function() {
             var view = this;
-            $.post('/contacts/find',
-            this.$('form').serialize(), function(data) {
+            // promise
+            var postFind = $.post('/contacts/find',this.$('form').serialize());
+            
+            postFind.done(function(data) {
                 //console.log(data);
                 view.render(data);
-            }).error(function() {
+            });
+            
+            postFind.fail(function() {
                 $("#results").text('No contacts found.');
                 $("#results").slideDown();
             });
             return false;
         },
 
+        // collectionview
         render: function(resultList) {
-            var view = this;
+            //var view = this;
             this.$el.html(_.template(addcontactTemplate));
             if (null !== resultList) {
                 _.each(resultList, function(contactJson) {
-                    console.log(contactJson);
+                    //console.log(contactJson);
 
                     var contactModel = new Contact(contactJson);
-                    console.dir(contactModel);
+                    //console.dir(contactModel);
 
                     var contactHtml = (new ContactView({
                         addButton: true,

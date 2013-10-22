@@ -8,7 +8,7 @@ function(SocialNetView, ChatSessionView, ChatItemView, chatItemTemplate) {
 
         initialize: function(options) {
             this.socketEvents = options.socketEvents;
-            this.collection.on('reset', this.renderCollection, this);
+            this.listenTo(this.collection,'reset',this.renderCollection);
         },
 
         render: function() {
@@ -35,7 +35,7 @@ function(SocialNetView, ChatSessionView, ChatItemView, chatItemTemplate) {
                     socketEvents: that.socketEvents,
                     model: contact
                 });
-                chatItemView.bind('chat:start', that.startChatSession, that);
+                chatItemView.on('chat:start', that.startChatSession, that);
                 var statusHtml = (chatItemView).render().el;
                 $(statusHtml).appendTo('.chat_list');
             });
